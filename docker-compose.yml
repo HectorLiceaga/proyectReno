@@ -1,0 +1,42 @@
+version: '3'
+services:
+  ### PostgreSQL
+  db-inventory:
+    container_name: db-inventory
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ms_inventory
+      POSTGRES_USER: hector_li
+      POSTGRES_PASSWORD: Test_123
+    ports:
+      - 5431:5431
+    expose:
+      - 5431
+    command: -p 5431
+  db-orders:
+    container_name: db-orders
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ms_orders
+      POSTGRES_USER: hector_li
+      POSTGRES_PASSWORD: Test_123
+    ports:
+      - 5436:5436
+    expose:
+      - 5436
+    command: -p 5436
+  db-products:
+    container_name: db-products
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ms_products
+      POSTGRES_USER: hector_li
+      POSTGRES_PASSWORD: Test_123
+    ports:
+      - 5435:5435
+    expose:
+      - 5435
+    command: -p 5435
